@@ -28,6 +28,13 @@ namespace Todo.Domain.Queries
                 x.Done == done &&
                 x.Date.Date == date.Date;
         }
+
+        public static Expression<Func<TodoItem, bool>> GetById(Guid id, string user)
+        {
+            return x => 
+                x.Id == id &&
+                x.User == user;
+        }
     }
 
 }
